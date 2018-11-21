@@ -35,7 +35,7 @@ class Blog extends MX_Controller {
 			$data['blog'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts?categories=' . $blog[0]['id']),true);
 		}
 		$data['keyword'] = $keyword;
-		$data['current_category'] = 0;
+		$data['current_category'] = 'all';
 		$data['header_title'] = 'Artikel';
 		$data['header_description'] = 'Dapatkan article tentang gaya hidup, keuangan, motivasi, bisnis properti, publik speaking dan sales & marketing';
 		$data['view'] = 'profile/main';
@@ -48,7 +48,7 @@ class Blog extends MX_Controller {
 		$blog = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/categories/?slug=' . $slug), true);
 		$data['blog'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts?categories=' . $blog[0]['id']),true);
 		$data['list_category'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/categories/?parent=' . $parent[0]['id']),true);
-		$data['current_category'] = $blog[0]['id'];
+		$data['current_category'] = $blog[0]['slug'];
 		$data['header_title'] = 'Artikel Kategori';
 		$data['header_description'] = 'menyajikan kategori artikel tentang gaya hidup, keuangan, motivasi, bisnis properti, publik speaking dan sales & marketing';
 		$data['view'] = 'blog/main';

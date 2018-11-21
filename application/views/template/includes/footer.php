@@ -1,50 +1,117 @@
-<!-- Footer -->
-<footer id="footer" class="footer section">
-    <!-- <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="logo">
-                        <img src="img/nnn.png" alt="#">
-                    </div>
-                    
+ <!--Start of footer-->
+ <section id="footer">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <div class="copyright">
+                    <p>@ 2016 - Design By <span><a href="">&#9798;</a></span></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="designer">
+                    <p>A Design By <a href="#">XpeedStudio</a></p>
                 </div>
             </div>
         </div>
-    </div> -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="social" style="margin-bottom: 16px;">
-                        <li><a href="<?php echo $this->config->item('sosmed_facebook');?>" target="_blank"><span class="fa fa-facebook"></span></a></li>
-                        <!--<li><a href="#"><span class="fa fa-twitter"></span></a></li>-->
-                        <li><a href="<?php echo $this->config->item('sosmed_instagram');?>" target="_blank"><span class="fa fa-instagram"></span></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-12">
-                    <p>© 2018 Distributed by <a href="https://themewagon.com/">ThemeWagon</a></p>
-                </div>
-            </div>
-        </div>
+        <!--End of row-->
     </div>
-</footer>
-<!--/ End Footer -->
-		
-        <script src="<?php echo base_url('assets/themes/js/jquery.nav.js');?>"></script>
-        <script src="<?php echo base_url('assets/themes/js/jquery.slicknav.min.js');?>"></script>
-        <script src="<?php echo base_url('assets/themes/js/easing.min.js');?>"></script>
-		<script src="<?php echo base_url('assets/themes/js/jquery-appear.js');?>"></script>
-        <script src="<?php echo base_url('assets/themes/js/jquery.scrollUp.min.js');?>"></script>
-        <script src="<?php echo base_url('assets/themes/js/owl.carousel.min.js');?>"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-		<script src="<?php echo base_url('assets/themes/js/jquery.counterup.min.js');?>"></script>
-		<script src="<?php echo base_url('assets/themes/js/isotope.pkgd.min.js');?>"></script>
-		<script src="<?php echo base_url('assets/themes/js/wow.min.js');?>"></script>
-		<script src="<?php echo base_url('assets/themes/js/jquery.magnific-popup.min.js');?>"></script>
-		<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyC0RqLa90WDfoJedoE3Z_Gy7a7o8PCL2jw"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/themes/js/gmaps.min.js');?>"></script>
-        <script src="<?php echo base_url('assets/themes/js/main.js');?>"></script>
-        <?php echo $this->load->view('template/includes/custom_footer_js');?>
+    <!--End of container-->
+</section>
+<!--End of footer-->
+
+<!--Scroll to top-->
+<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+<!--End of Scroll to top-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>-->
+<script src="<?php echo base_url('assets/themes/js/jquery-1.12.3.min.js')?>"></script>
+
+<!--Counter UP Waypoint-->
+<script src="<?php echo base_url('assets/themes/js/waypoints.min.js')?>"></script>
+<!--Counter UP-->
+<script src="<?php echo base_url('assets/themes/js/jquery.counterup.min.js')?>"></script>
+
+<script>
+    //for counter up
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+</script>
+
+<!--Gmaps-->
+<script src="<?php echo base_url('assets/themes/js/gmaps.min.js')?>"></script>
+<script type="text/javascript">
+    var map;
+    $(document).ready(function () {
+        map = new GMaps({
+            el: '#map',
+            lat: 23.6911078,
+            lng: 90.5112799,
+            zoomControl: true,
+            zoomControlOpt: {
+                style: 'SMALL',
+                position: 'LEFT_BOTTOM'
+            },
+            panControl: false,
+            streetViewControl: false,
+            mapTypeControl: false,
+            overviewMapControl: false,
+            scrollwheel: false,
+        });
+
+
+        map.addMarker({
+            lat: 23.6911078,
+            lng: 90.5112799,
+            title: 'Office',
+            details: {
+                database_id: 42,
+                author: 'Foysal'
+            },
+            click: function (e) {
+                if (console.log)
+                    console.log(e);
+                alert('You clicked in this marker');
+            },
+            mouseover: function (e) {
+                if (console.log)
+                    console.log(e);
+            }
+        });
+    });
+</script>
+<!--Google Maps API-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjxvF9oTfcziZWw--3phPVx1ztAsyhXL4"></script>
+
+
+<!--Isotope-->
+<script src="<?php echo base_url('assets/themes/js/isotope/min/scripts-min.js')?>"></script>
+<script src="<?php echo base_url('assets/themes/js/isotope/cells-by-row.js')?>"></script>
+<script src="<?php echo base_url('assets/themes/js/isotope/isotope.pkgd.min.js')?>"></script>
+<script src="<?php echo base_url('assets/themes/js/isotope/packery-mode.pkgd.min.js')?>"></script>
+<script src="<?php echo base_url('assets/themes/js/isotope/scripts.js')?>"></script>
+
+
+<!--Back To Top-->
+<script src="<?php echo base_url('assets/themes/js/backtotop.js')?>"></script>
+
+
+<!--JQuery Click to Scroll down with Menu-->
+<script src="<?php echo base_url('assets/themes/js/jquery.localScroll.min.js')?>"></script>
+<script src="<?php echo base_url('assets/themes/js/jquery.scrollTo.min.js')?>"></script>
+<!--WOW With Animation-->
+<script src="<?php echo base_url('assets/themes/js/wow.min.js')?>"></script>
+<!--WOW Activated-->
+<script>
+    new WOW().init();
+</script>
+
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="<?php echo base_url('assets/themes/js/bootstrap.min.js')?>"></script>
+<!-- Custom JavaScript-->
+<script src="<?php echo base_url('assets/themes/js/main.js')?>"></script>
     </body>
 </html>

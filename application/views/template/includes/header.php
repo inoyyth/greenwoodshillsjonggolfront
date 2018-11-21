@@ -18,28 +18,26 @@
         <!-- opengraph FB -->
         <meta property="og:url" content="<?php echo current_url();?>" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="<?php echo (isset($header_title) ? $header_title : 'Home Page');?> - Bayo Binsar Official Website" />
+        <meta property="og:title" content="<?php echo (isset($header_title) ? $header_title : 'Home Page');?> - Green Woods Jonggol Official Website" />
         <meta property="og:description" content="<?php echo (isset($header_description) ? $header_description : 'Public speaking is the process of speaking to a group of people in a structured, deliberate manner intended to inform, influence, or entertain the listeners');?>" />
         <meta property="og:image" content="<?php echo (isset($header_image) ? $header_image : 'https://bayobinsar.com/wordpress/wp-content/uploads/2018/10/bayoimg-1-300x243.jpg');?>" />
         <meta property="og:app_id" content="1463119233924371"  />
 
-        <link rel="alternate" hreflang="id" href="https://newlaunch.rumah123.com/en/property/">
+        <link rel="alternate" hreflang="id" href="<?php echo base_url();?>">
         <link rel="icon" href="<?php echo base_url('assets/themes/img/icon.png');?>">
-		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300i,400,400i,500,600,700,800,900" rel="stylesheet">
-		<link rel="stylesheet" href="<?php echo base_url('assets/themes/css/bootstrap.min.css');?>">
-		<link rel="stylesheet" href="<?php echo base_url('assets/themes/css/slicknav.min.css?'.date('YmdHis'));?>">
-		<link rel="stylesheet" href="<?php echo base_url('assets/themes/css/bootstrap-theme.min.css?'.date('YmdHis'));?>">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <!--Fontawesom-->
         <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/font-awesome.min.css?'.date('YmdHis'));?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/owl.carousel.min.css?'.date('YmdHis'));?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/owl.theme.default.min.css?'.date('YmdHis'));?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/animate.min.css?'.date('YmdHis'));?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/magnific-popup.css?'.date('YmdHis'));?>">
-		
-		<!-- Xman CSS -->
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/normalize.css?'.date('YmdHis'));?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/style.css?'.date('YmdHis'));?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/responsive.css?'.date('YmdHis'));?>">
-        <script src="<?php echo base_url('assets/themes/js/jquery.min.js');?>">  </script>
-        <script src="<?php echo base_url('assets/themes/js/bootstrap.min.js');?>"></script>
+        <!--Animated CSS-->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/themes/css/animate.min.css?'.date('YmdHis'));?>">
+        <!-- Bootstrap -->
+        <link href="<?php echo base_url('assets/themes/css/bootstrap.min.css?'.date('YmdHis'));?>" rel="stylesheet">
+        <!--Bootstrap Carousel-->
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/themes/css/carousel.css?'.date('YmdHis'));?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/themes/css/isotope/style.css?'.date('YmdHis'));?>">
+        <!--Main Stylesheet-->
+        <link href="<?php echo base_url('assets/themes/css/style.css?'.date('YmdHis'));?>" rel="stylesheet">
+        <!--Responsive Framework-->
+        <link href="<?php echo base_url('assets/themes/css/responsive.css?'.date('YmdHis'));?>" rel="stylesheet">
     </head>
     <body>

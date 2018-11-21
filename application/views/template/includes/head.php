@@ -1,46 +1,76 @@
-<!-- Social
-<div class="social-body">
-    <ul>
-        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-        <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-    </ul>
-</div>
-End Social -->
-
-<!-- Header Area -->
-<header id="header" class="header">
-    <div class="header-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-4 col-xs-8">
-                    <div class="logo">
-                        <a href="<?php echo base_url();?>">Bayo Binsar</a>
+<!--Start Hedaer Section-->
+<section id="header">
+    <div class="header-area">
+        <div class="top_header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zero_mp">
+                        <div class="address">
+                            <i class="fa fa-home floatleft"></i>
+                            <p>Elephant Road, Dhaka 1205, Bangladesh</p>
+                        </div>
                     </div>
+                    <!--End of col-md-4-->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zero_mp">
+                        <div class="phone">
+                            <i class="fa fa-phone floatleft"></i>
+                            <p>+ 8801532-987039</p>
+                        </div>
+                    </div>
+                    <!--End of col-md-4-->
+                    <div class="col-md-4">
+                        <div class="social_icon text-right">
+                            <a href=""><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href=""><i class="fa fa-google-plus"></i></a>
+                            <a href=""><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <!--End of col-md-4-->
                 </div>
-                <div class="col-md-9 col-sm-8 col-xs-4">
-                    <div class="mobile-menu"></div>
-                    <nav class="navbar navbar-default">
-                        <div class="collapse navbar-collapse">
-                            <?php 
-                                echo $this->multi_menu->render(
-                                    array(
-                                        'nav_tag_open'        => '<ul id="nav" class="nav navbar-nav">',            
-                                        'parentl1_tag_open'   => '<li>',
-                                        'parentl1_anchor'     => '<a href="%s">%s</a>',
-                                        'parent_tag_open'     => '<li>',
-                                        'parent_anchor'       => '<a href="%s">%s</a>',
-                                        'children_tag_open'   => '<ul>'
-                                    )
-                                ); 
-                            ?>
-                        </div> 
-                    </nav>
-                </div>
+                <!--End of row-->
             </div>
+            <!--End of container-->
         </div>
+        <!--End of top header-->
+        <div class="header_menu text-center" data-spy="affix" data-offset-top="50" id="nav">
+            <div class="container">
+                <nav class="navbar navbar-default zero_mp ">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand custom_navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                    </div>
+                    <!--End of navbar-header-->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse zero_mp" id="bs-example-navbar-collapse-1">
+                        <?php 
+                            echo $this->multi_menu->render(
+                                array(
+                                    'nav_tag_open'        => '<ul id="nav" class="nav navbar-nav navbar-right main_menu">',            
+                                    'parentl1_tag_open'   => '<li>',
+                                    'parentl1_anchor'     => '<a href="%s">%s</a>',
+                                    'parent_tag_open'     => '<li>',
+                                    'parent_anchor'       => '<a href="%s">%s</a>',
+                                    'children_tag_open'   => '<ul>'
+                                )
+                            ); 
+                        ?>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+                <!--End of nav-->
+            </div>
+            <!--End of container-->
+        </div>
+        <!--End of header menu-->
     </div>
-    <!--/ End Header Inner -->
-</header>
-<!-- End Header Area -->
+    <!--end of header area-->
+</section>
+<!--End of Hedaer Section-->

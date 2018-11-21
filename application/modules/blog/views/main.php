@@ -1,4 +1,4 @@
-<!-- Blog -->
+<!-- Blog --><?php //var_dump($current_category);die;?>
 <section id="blog" class="blog section" style="background: #ffffff;">
 	<div class="container">
 		<div class="row">
@@ -22,14 +22,29 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="works-menu">
 					<ul>
-						<li <?php echo ($current_category == 0 ? 'class="active"' : '');?>><a href="<?php echo site_url('article');?>"><i class="fa fa-newspaper-o"></i>All</a></li>
+						<li <?php echo ($current_category == 'all' ? 'class="active"' : '');?>><a href="<?php echo site_url('article');?>"><i class="fa fa-newspaper-o"></i>All</a></li>
 						<?php
 						$icon = array('usd', 'shopping-bag', 'heart', 'home', 'users', 'line-chart'); 
 						if ( count($list_category > 0) ) {
 							foreach ( $list_category as $k => $v ) {
+								if ($v['slug'] == 'finance') {
 						?>
-						<li <?php echo ($current_category == $v['id'] ? 'class="active"' : '');?>><a href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-<?php echo $icon[$k];?>"></i><?php echo $v['name'];?></a></li>
-						<?php } } ?>
+						<li role="presentation" <?php echo ($current_category == $v['slug'] ? 'class="active dropdown"' : 'class="dropdown"');?>><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-<?php echo $icon[$k];?>"></i><?php echo $v['name'];?></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="<?php echo site_url('article/agent-property');?>"><i class="fa fa-users"></i>Agent Property</a>
+							</li>
+							<li>
+								<a href="<?php echo site_url('article/developer');?>"><i class="fa fa-users"></i>Developer</a>
+							</li>
+							<li>
+								<a href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-users"></i><?php echo $v['name'];?></a>
+							</li>
+						</ul>
+						</li>
+						<?php } else { ?>
+						<li <?php echo ($current_category == $v['slug'] ? 'class="active"' : '');?>><a href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-<?php echo $icon[$k];?>"></i><?php echo $v['name'];?></a></li>
+						<?php } } } ?>
 					</ul>
 				</div>
 				<!--/ End Project Nav -->

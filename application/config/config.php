@@ -527,3 +527,7 @@ $config['proxy_ips'] = '';
 $config['rest_api_inoy'] = 'http://localhost/wordpress/index.php/wp-json/inoy-rest-api/v1';
 
 $config['rest_api_default'] = 'http://localhost/wordpress/index.php/wp-json/wp/v2';
+
+$config['sosmed_facebook'] = 'https://www.facebook.com/bayo.b.m';
+
+$config['sosmed_instagram'] = 'https://www.instagram.com/bayobinsar/';
