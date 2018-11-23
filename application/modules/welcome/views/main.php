@@ -96,7 +96,9 @@
         <!-- </section> -->
         <!--end of welcome section-->
 
-
+        <?php 
+        if (count($special_offers) > 0) {
+        ?>
         <!--start of event-->
         <section id="event">
             <div class="container">
@@ -109,23 +111,29 @@
                     </div>
                 </div>
                 <!--End of row-->
+                <?php foreach($special_offers as $k => $v) { ?>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6 zero_mp">
                                 <div class="event_item">
                                     <div class="event_img">
-                                        <img src="img/tree_cut_1.jpg" alt="">
+                                        <a href="<?php echo base_url('product/' . url_title($v['title']['rendered'], '-', true) . '-' . $v['id']);?>">
+                                            <img src="<?php echo $v['featured_image']['url'];?>" alt="">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 zero_mp">
                                 <div class="event_item">
                                     <div class="event_text text-center">
-                                        <a href=""><h4>One Tree Thousand Hope</h4></a>
-                                        <h6>15-16 May in Dhaka</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adip scing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <a href="" class="event_btn">read more</a>
+                                        <a href="<?php echo base_url('product/' . url_title($v['title']['rendered'], '-', true) . '-' . $v['id']);?>"><h4><?php echo $v['title']['rendered'];?></h4></a>
+                                        <div class="text-justify">
+                                            <?php echo character_limiter($v['excerpt']['rendered'], 350);?>
+                                        </div>
+                                        <div>
+                                            <a href="<?php echo base_url('product/' . url_title($v['title']['rendered'], '-', true) . '-' . $v['id']);?>" class="event_btn">read more</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -133,11 +141,13 @@
                     </div>
                     <!--End of col-md-4-->
                 </div>
+                <?php  } ?>
                 <!--End of row-->
             </div>
             <!--End of container-->
         </section>
         <!--end of event-->
+        <?php } ?>
 
 
         <?php 
@@ -166,30 +176,30 @@
                                             <?php 
                                                 foreach($testimonials as $kIndicator=>$vIndicator) { 
                                             ?>
-                                            <li data-target="#fade-quote-carousel" data-slide-to="<?php echo $kIndicator;?>" <?php echo $kIndicator == 0 ? 'class="active"' : '' ?>></li>
+                                            <li data-target="#fade-quote-carousel" data-slide-to="<?php echo $kIndicator;?>" <?php echo $kIndicator == 0 ? 'class="active"' : ''; ?>></li>
                                             <?php } ?>
                                         </ol>
                                         <!-- Carousel items -->
-                                        <?php 
-                                            foreach($testimonials as $kItem=>$vItem) { 
-                                        ?>
                                         <div class="carousel-inner">
-                                            <div class="active item">
+                                            <?php 
+                                                foreach($testimonials as $kItem=>$vItem) { 
+                                            ?>
+                                            <div class="<?php echo $kItem == 0 ? 'active' : ''; ?> item">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="testimonial_content">
                                                             <i class="fa fa-quote-left"></i>
-                                                            <?php echo $vIndicator['content']['rendered'];?>
+                                                            <?php echo $vItem['content']['rendered'];?>
                                                         </div>
                                                         <div class="testimonial_author">
-                                                            <h5><?php echo $vIndicator['acf']['name'];?></h5>
-                                                            <p><?php echo $vIndicator['acf']['title'];?></p>
+                                                            <h5><?php echo $vItem['acf']['name'];?></h5>
+                                                            <p><?php echo $vItem['acf']['title'];?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php } ?>  
                                         </div>
-                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -203,118 +213,10 @@
             <!--End of container-->
         </section>
         <!--end of testimonial-->
-            <?php } ?>
-
-
-        <!--Start of blog-->
-        <section id="blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="latest_blog text-center">
-                            <h2>latest blog</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo cum libero vitae quos eaque commodi.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--End of row-->
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="blog_news">
-                            <div class="single_blog_item">
-                                <div class="blog_img">
-                                    <img src="img/climate_effect.jpg" alt="">
-                                </div>
-                                <div class="blog_content">
-                                    <a href=""><h3>Climate change is affecting bird migration</h3></a>
-                                    <div class="expert">
-                                        <div class="left-side text-left">
-                                            <p class="left_side">
-                                                <span class="clock"><i class="fa fa-clock-o"></i></span>
-                                                <span class="time">Aug 19, 2016</span>
-                                                <a href=""><span class="admin"><i class="fa fa-user"></i> Admin</span></a>
-                                            </p>
-                                            <p class="right_side text-right">
-                                                <a href=""><span class="right_msg text-right"><i class="fa fa-comments-o"></i></span>
-                                                    <span class="count">0</span></a>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="blog_news_content">Lorem ipsum dolor sit amet, consectetur adipscing elit. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. consectetur Lorem ipsum dolor sitamet, conse ctetur adipiscing elit. </p>
-                                    <a href="" class="blog_link">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of col-md-4-->
-                    <div class="col-md-4">
-                        <div class="blog_news">
-                            <div class="single_blog_item">
-                                <div class="blog_img">
-                                    <img src="img/air_pollutuon.jpg" alt="">
-                                </div>
-                                <div class="blog_content">
-                                    <a href=""><h3>How to avoid indoor air pollution?</h3></a>
-                                    <div class="expert">
-                                        <div class="left-side text-left">
-                                            <p class="left_side">
-                                                <span class="clock"><i class="fa fa-clock-o"></i></span>
-                                                <span class="time">Aug 19, 2016</span>
-                                                <a href=""><span class="admin"><i class="fa fa-user"></i> Admin</span></a>
-                                            </p>
-                                            <p class="right_side text-right">
-                                                <a href=""><span class="right_msg text-right"><i class="fa fa-comments-o"></i></span>
-                                                    <span class="count">0</span></a>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="blog_news_content">Lorem ipsum dolor sit amet, consectetur adipscing elit. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. consectetur Lorem ipsum dolor sitamet, conse ctetur adipiscing elit. </p>
-                                    <a href="" class="blog_link">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of col-md-4-->
-                    <div class="col-md-4">
-                        <div class="blog_news">
-                            <div class="single_blog_item">
-                                <div class="blog_img">
-                                    <img src="img/threat_bear.jpg" alt="">
-                                </div>
-                                <div class="blog_content">
-                                    <a href=""><h3>Threat to Yellowstone’s grizzly bears.</h3></a>
-                                    <div class="expert">
-                                        <div class="left-side text-left">
-                                            <p class="left_side">
-                                                <span class="clock"><i class="fa fa-clock-o"></i></span>
-                                                <span class="time">Aug 19, 2016</span>
-                                                <a href=""><span class="admin"><i class="fa fa-user"></i> Admin</span></a>
-                                            </p>
-                                            <p class="right_side text-right">
-                                                <a href=""><span class="right_msg text-right"><i class="fa fa-comments-o"></i></span>
-                                                    <span class="count">0</span></a>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="blog_news_content">Lorem ipsum dolor sit amet, consectetur adipscing elit. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. consectetur Lorem ipsum dolor sitamet, conse ctetur adipiscing elit. </p>
-                                    <a href="" class="blog_link">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of col-md-4-->
-                </div>
-                <!--End of row-->
-            </div>
-            <!--End of container-->
-        </section>
-        <!-- end of blog-->
+        <?php } ?>
 
         <!--Start of Market-->
-        <section id="market">
+        <section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

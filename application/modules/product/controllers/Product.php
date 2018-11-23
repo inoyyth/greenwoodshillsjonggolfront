@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Service extends MX_Controller {
+class Product extends MX_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,8 +25,7 @@ class Service extends MX_Controller {
 
 	public function index()
 	{
-		$category = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/categories/?slug=my-service'), true);
-		$data['service'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts?categories=' . $category[0]['id']),true);
+		$data['products'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts?categories=3'),true);
 		$data['header_title'] = 'Layanan';
 		$data['header_description'] = 'Layanan pengetahuan tentang gaya hidup, keuangan, motivasi, bisnis properti, publik speaking dan sales & marketing';
 		$data['view'] = 'service/main';

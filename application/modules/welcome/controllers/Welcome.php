@@ -27,6 +27,7 @@ class Welcome extends MX_Controller {
 	{
 		$data['banner'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/pages?slug=home-banner'),true);
 		$data['testimonials'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts?categories=1'),true);
+		$data['special_offers'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts/?categories=3&pe_rpage=3'),true);
 		$data['csrf'] = array(
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash()
