@@ -28,7 +28,15 @@ class Product extends MX_Controller {
 		$data['products'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts?categories=3'),true);
 		$data['header_title'] = 'Layanan';
 		$data['header_description'] = 'Layanan pengetahuan tentang gaya hidup, keuangan, motivasi, bisnis properti, publik speaking dan sales & marketing';
-		$data['view'] = 'service/main';
+		$data['view'] = 'product/main';
+		$this->load->view('template/template', $data);
+	}
+
+	public function detail($id) {
+		$data['product'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/posts/' . $id),true);
+		$data['header_title'] = 'Produk ' . $data['product']['title']['rendered'];
+		$data['header_description'] = 'Layanan pengetahuan tentang gaya hidup, keuangan, motivasi, bisnis properti, publik speaking dan sales & marketing';
+		$data['view'] = 'product/detail';
 		$this->load->view('template/template', $data);
 	}
 }
