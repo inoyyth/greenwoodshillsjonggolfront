@@ -1,4 +1,4 @@
-<!--Start Hedaer Section-->
+<?php $head_content = $this->headercontent->getContent();?><!--Start Hedaer Section-->
 <section id="header">
     <div class="header-area">
         <div class="top_header">
@@ -7,23 +7,22 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zero_mp">
                         <div class="address">
                             <i class="fa fa-home floatleft"></i>
-                            <p>Elephant Road, Dhaka 1205, Bangladesh</p>
+                            <p><?php echo $head_content[0]['acf']['address'];?></p>
                         </div>
                     </div>
                     <!--End of col-md-4-->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 zero_mp">
                         <div class="phone">
                             <i class="fa fa-phone floatleft"></i>
-                            <p>+ 8801532-987039</p>
+                            <p><?php echo $head_content[0]['acf']['phone'];?></p>
                         </div>
                     </div>
                     <!--End of col-md-4-->
                     <div class="col-md-4">
                         <div class="social_icon text-right">
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-youtube"></i></a>
+                            <a href="<?php echo $head_content[0]['acf']['facebook'];?>"><i class="fa fa-facebook"></i></a>
+                            <a href="<?php echo $head_content[0]['acf']['twitter'];?>"><i class="fa fa-twitter"></i></a>
+                            <a href="<?php echo $head_content[0]['acf']['youtube'];?>"><i class="fa fa-youtube"></i></a>
                         </div>
                     </div>
                     <!--End of col-md-4-->
@@ -44,7 +43,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand custom_navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                        <a class="navbar-brand custom_navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/themes/img/logo.png" alt=""></a>
                     </div>
                     <!--End of navbar-header-->
 

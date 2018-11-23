@@ -1,85 +1,52 @@
-<!-- Blog --><?php //var_dump($current_category);die;?>
-<section id="blog" class="blog section" style="background: #ffffff;">
+<!--Start of blog-->
+<section id="blog">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-xs-12">
-				<div class="section-title" style="text-align: left !important;">
-					<h2>Latest <span>News</span></h2>
+			<div class="col-md-12">
+				<div class="latest_blog text-center">
+					<h2>latest article</h2>
 				</div>
 			</div>
-			<div class="col-md-4 col-xs-12">
-				<form method="get" action="<?php echo base_url('article/');?>">
-					<div class="input-group">
-						<input type="text" name="search" value="<?php echo (isset($keyword) ? $keyword : '');?>" class="form-control" placeholder="Search articles...">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-						</span>
-					</div>
-				</form>
-			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="works-menu">
-					<ul>
-						<li <?php echo ($current_category == 'all' ? 'class="active"' : '');?>><a href="<?php echo site_url('article');?>"><i class="fa fa-newspaper-o"></i>All</a></li>
-						<?php
-						$icon = array('usd', 'shopping-bag', 'heart', 'home', 'users', 'line-chart'); 
-						if ( count($list_category > 0) ) {
-							foreach ( $list_category as $k => $v ) {
-								if ($v['slug'] == 'finance') {
-						?>
-						<li role="presentation" <?php echo ($current_category == $v['slug'] ? 'class="active dropdown"' : 'class="dropdown"');?>><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-<?php echo $icon[$k];?>"></i><?php echo $v['name'];?></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="<?php echo site_url('article/agent-property');?>"><i class="fa fa-users"></i>Agent Property</a>
-							</li>
-							<li>
-								<a href="<?php echo site_url('article/developer');?>"><i class="fa fa-users"></i>Developer</a>
-							</li>
-							<li>
-								<a href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-users"></i><?php echo $v['name'];?></a>
-							</li>
-						</ul>
-						</li>
-						<?php } else { ?>
-						<li <?php echo ($current_category == $v['slug'] ? 'class="active"' : '');?>><a href="<?php echo site_url('article/' . $v['slug']);?>"><i class="fa fa-<?php echo $icon[$k];?>"></i><?php echo $v['name'];?></a></li>
-						<?php } } } ?>
-					</ul>
-				</div>
-				<!--/ End Project Nav -->
-			</div>
-		</div>
+		<!--End of row-->
 		<div class="row">
 			<?php 
 			if ( count($blog) > 0 ) {
 				foreach ( $blog as $k => $v) {
 				$strtime = strtotime($v['date_gmt']." UCT");
 			?>
-			<div class="col-md-4 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.4s">
-				<!-- single-news -->
-				<div class="single-news blogs-detail">
-					<div class="news-head">
-						<div class="news-date">
-							<span><?php echo date('d', $strtime);?></span> 
-							<span><?php echo date('M', $strtime);?></span> 
-							<span><?php echo date('Y', $strtime);?></span> 
+			<div class="col-md-4" style="margin-bottom: 10px;">
+				<div class="blog_news">
+					<div class="single_blog_item">
+						<div class="blog_img">
+							<img src="<?php echo $v['featured_image']['url'];?>" alt="">
 						</div>
-						<img class="img-wrapper" src="<?php echo $v['featured_image']['url'];?>" alt="#">
-						<div class="news-view"> 
-							<!--<span><i class="fa fa-comments"></i>25 comments</span> -->
-							<span><i class="fa fa-eye"></i><?php echo ((int)$v['post_views'] == 0 ? 1 : (int)$v['post_views']);?> views</span>
+						<div class="blog_content">
+						<a title="<?php echo $v['title']['rendered'];?>" href="<?php echo site_url('article/' . url_title($v['title']['rendered'], '-', true) . '-' . $v['id']);?>"><h3><?php echo word_limiter($v['title']['rendered'], 5);?></h3></a>
+							<div class="expert">
+								<div class="left-side text-left">
+									<p class="left_side">
+										<span class="clock"><i class="fa fa-clock-o"></i></span>
+										<span class="time"><?php echo date('M', $strtime);?> <?php echo date('d', $strtime);?>, <?php echo date('Y', $strtime);?></span>
+										<span class="admin"><i class="fa fa-user"></i> Admin</span>
+									</p>
+									<p class="right_side text-right" style="padding-left: 100px;">
+										<span class="right_msg text-right"><i class="fa fa-eye"></i></span>
+										<span class="count"><?php echo ((int)$v['post_views'] == 0 ? 1 : (int)$v['post_views']);?></span>
+									</p>
+								</div>
+							</div>
+
+							<?php echo character_limiter($v['excerpt']['rendered'], 210);?>
 						</div>
-					</div>
-					<div class="news-body" style="text-align: justify;">
-						<h2><a title="<?php echo $v['title']['rendered'];?>" href="<?php echo site_url('article/' . url_title($v['title']['rendered'], '-', true) . '-' . $v['id']);?>"><?php echo word_limiter($v['title']['rendered'], 5);?></a></h2>
-						<?php echo character_limiter($v['excerpt']['rendered'], 170);?>
-						<!--<a href="<?php echo site_url('article/' . url_title($v['title']['rendered'], '-', true) . '-' . $v['id']);?>" class="btn">Read More<i class="fa fa-angle-double-right"></i></a>-->
 					</div>
 				</div>
 			</div>
+			<!--End of col-md-4-->
 			<?php } } ?>
 		</div>
+		<!--End of row-->
 	</div>
+	<!--End of container-->
 </section>
-<!--/ End blog -->
+<!-- end of blog-->

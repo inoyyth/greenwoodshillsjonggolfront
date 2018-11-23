@@ -5,11 +5,10 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="slider_overlay">
-                            <img src="<?php echo base_url();?>assets/themes/img/img3.jpg" alt="...">
+                            <img src="<?php echo $banner[0]['featured_image']['url'];?>" alt="...">
                             <div class="carousel-caption">
                                 <div class="slider_text">
-									<h2>Green Woods Hills Jonggol</h2>
-									<h3>PT.PROPERTINDO</h3>
+                                    <?php echo $banner[0]['content']['rendered'];?>
                                 </div>
                             </div>
                         </div>
@@ -21,21 +20,19 @@
         </section>
         <!--end of slider section-->
 
-
-
         <!--Start of welcome section-->
-        <section id="welcome">
+        <!-- <section id="welcome">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wel_header">
                             <h2>welcome to green woods hills jonggol</h2>
-                            <p>Our Green Fire Organization is one of the non profit organization near you. Get our services like</p>
+                             <p>Our Green Fire Organization is one of the non profit organization near you. Get our services like</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!--End of row-->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-3">
                         <div class="item">
                             <div class="single_item">
@@ -48,9 +45,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--End of col-md-3-->
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="item">
                             <div class="single_item">
                                 <div class="item_list">
@@ -62,9 +59,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--End of col-md-3-->
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="item">
                             <div class="single_item">
                                 <div class="item_list">
@@ -76,9 +73,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--End of col-md-3-->
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="item">
                             <div class="single_item">
                                 <div class="item_list">
@@ -90,13 +87,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--End of col-md-3-->
-                </div>
+                <!-- </div> -->
                 <!--End of row-->
-            </div>
+            <!-- </div> -->
             <!--End of container-->
-        </section>
+        <!-- </section> -->
         <!--end of welcome section-->
 
 
@@ -133,85 +130,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End of row-->
-                        <div class="row">
-                            <div class="col-md-6 zero_mp">
-                                <div class="event_item">
-                                    <div class="event_text text-center">
-                                        <a href=""><h4>One Tree Thousand Hope</h4></a>
-                                        <h6>15-16 May in Dhaka</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adip scing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <a href="" class="event_btn">read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 zero_mp">
-                                <div class="event_item">
-                                    <div class="event_img">
-                                        <img src="img/tree_cut_2.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End of row-->
-                    </div>
-                    <!--End of col-md-8-->
-                    <div class="col-md-4">
-                        <div class="event_news">
-                            <div class="event_single_item fix">
-                                <div class="event_news_img floatleft">
-                                    <img src="img/tree_cut_3.jpg" alt="">
-                                </div>
-                                <div class="event_news_text">
-                                    <a href="#"><h4>Let’s plant 200 tree each...</h4></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, veniam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event_news">
-                            <div class="event_single_item fix">
-                                <div class="event_news_img floatleft">
-                                    <img src="img/tree_cut_4.jpg" alt="">
-                                </div>
-                                <div class="event_news_text">
-                                    <a href="#"><h4>Keep your house envirome..</h4></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, veniam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event_news">
-                            <div class="event_single_item fix">
-                                <div class="event_news_img floatleft">
-                                    <img src="img/tree_cut_3.jpg" alt="">
-                                </div>
-                                <div class="event_news_text">
-                                    <a href="#"><h4>Urgent Clothe Needed Needed</h4></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, veniam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event_news">
-                            <div class="event_single_item fix">
-                                <div class="event_news_img floatleft">
-                                    <img src="img/tree_cut_4.jpg" alt="">
-                                </div>
-                                <div class="event_news_text">
-                                    <a href="#"><h4>One Tree Thousand Hope</h4></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, veniam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event_news">
-                            <div class="event_single_item fix">
-                                <div class="event_news_img floatleft">
-                                    <img src="img/tree_cut_3.jpg" alt="">
-                                </div>
-                                <div class="event_news_text">
-                                    <a href="#"><h4>One Tree Thousand Hope</h4></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, veniam.</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!--End of col-md-4-->
                 </div>
@@ -222,7 +140,9 @@
         <!--end of event-->
 
 
-
+        <?php 
+            if(count($testimonials) > 0) {
+        ?>
         <!--Start of testimonial-->
         <section id="testimonial">
             <div class="testimonial_overlay">
@@ -231,7 +151,7 @@
                         <div class="col-md-12">
                             <div class="testimonial_header text-center">
                                 <h2>testimonials</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
                             </div>
                         </div>
                     </div>
@@ -243,74 +163,33 @@
                                     <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
                                         <!-- Carousel indicators -->
                                         <ol class="carousel-indicators">
-                                            <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+                                            <?php 
+                                                foreach($testimonials as $kIndicator=>$vIndicator) { 
+                                            ?>
+                                            <li data-target="#fade-quote-carousel" data-slide-to="<?php echo $kIndicator;?>" <?php echo $kIndicator == 0 ? 'class="active"' : '' ?>></li>
+                                            <?php } ?>
                                         </ol>
                                         <!-- Carousel items -->
+                                        <?php 
+                                            foreach($testimonials as $kItem=>$vItem) { 
+                                        ?>
                                         <div class="carousel-inner">
                                             <div class="active item">
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="profile-circle">
-                                                            <img src="img/tree_cut_3.jpg" alt="">
-                                                        </div>
+                                                    <div class="col-md-12">
                                                         <div class="testimonial_content">
                                                             <i class="fa fa-quote-left"></i>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+                                                            <?php echo $vIndicator['content']['rendered'];?>
                                                         </div>
                                                         <div class="testimonial_author">
-                                                            <h5>Sadequr Rahman Sojib</h5>
-                                                            <p>CEO, Fourder</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="profile-circle">
-                                                            <img src="img/tree_cut_3.jpg" alt="">
-                                                        </div>
-                                                        <div class="testimonial_content">
-                                                            <i class="fa fa-quote-left"></i>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                                                        </div>
-                                                        <div class="testimonial_author">
-                                                            <h5>Sadequr Rahman Sojib</h5>
-                                                            <p>CEO, Fourder</p>
+                                                            <h5><?php echo $vIndicator['acf']['name'];?></h5>
+                                                            <p><?php echo $vIndicator['acf']['title'];?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--End of item with active-->
-                                            <div class="item">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="profile-circle">
-                                                            <img src="img/tree_cut_3.jpg" alt="">
-                                                        </div>
-                                                        <div class="testimonial_content">
-                                                            <i class="fa fa-quote-left"></i>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                                                        </div>
-                                                        <div class="testimonial_author">
-                                                            <h5>Sadequr Rahman Sojib</h5>
-                                                            <p>CEO, Fourder</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="profile-circle">
-                                                            <img src="img/tree_cut_3.jpg" alt="">
-                                                        </div>
-                                                        <div class="testimonial_content">
-                                                            <i class="fa fa-quote-left"></i>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                                                        </div>
-                                                        <div class="testimonial_author">
-                                                            <h5>Sadequr Rahman Sojib</h5>
-                                                            <p>CEO, Fourder</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--ENd of item-->
                                         </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -324,7 +203,7 @@
             <!--End of container-->
         </section>
         <!--end of testimonial-->
-
+            <?php } ?>
 
 
         <!--Start of blog-->
@@ -434,27 +313,6 @@
         </section>
         <!-- end of blog-->
 
-
-
-        <!--Start of Purches-->
-        <section id="purches">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="purches_title">Buy our wordpress theme</h2>
-                    </div>
-                    <div class="col-md-2 col-md-offset-4">
-                        <a href="" class="purches_btn">purches</a>
-                    </div>
-                </div>
-                <!--End of row-->
-            </div>
-            <!--End of container-->
-        </section>
-        <!--End of purches-->
-
-
-
         <!--Start of Market-->
         <section id="market">
             <div class="container">
@@ -503,8 +361,8 @@
                 <div class="row">
                     <div class="colmd-12">
                         <div class="contact_area text-center">
-                            <h3>get in touch</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h3>Hey, Contact Us Here</h3>
+                            <p>Jika anda memmiliki pertanyaan mengenai produk yang kami miliki atau anda ingin bergabung bersama kami jangan ragu untuk menghubungi kami</p>
                         </div>
                     </div>
                 </div>
