@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Bayo Binsar Official Website - Inquiry Email</title>
+    <title>GreenWood Hill Jonggol - Inquiry Email</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -282,7 +282,7 @@
           <div class="content">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <span class="preheader">Bayo Binsar Manullang</span>
+            <span class="preheader">GreenWood Hills Jonggol</span>
             <table role="presentation" class="main">
 
               <!-- START MAIN CONTENT AREA -->
@@ -330,7 +330,7 @@
                 </tr> -->
                 <tr>
                   <td class="content-block powered-by">
-                    Powered by <a href="<?php echo base_url();?>">Bayo Binsar Manullang</a>.
+                    Powered by <a href="<?php echo base_url();?>">GreenWood Hills Jonggol</a>.
                   </td>
                 </tr>
               </table>

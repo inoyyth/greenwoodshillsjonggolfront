@@ -277,15 +277,14 @@
                             </div>
                             <div class="office_location">
                                 <div class="address">
-                                    <i class="fa fa-map-marker"><span>Elephant Road, Dhaka 1205, Bangladesh</span></i>
+                                    <i class="fa fa-map-marker"><span><?php echo $contact[0]['acf']['address']; ?></span></i>
                                 </div>
                                 <div class="phone">
-                                    <i class="fa fa-phone"><span>+ 8801532-987039</span></i>
+                                    <i class="fa fa-phone"><span><?php echo $contact[0]['acf']['phone']; ?></span></i>
                                 </div>
                                 <div class="email">
-                                    <i class="fa fa-envelope"><span>youremail@mail.com</span></i>
+                                    <i class="fa fa-envelope"><span><?php echo $contact[0]['acf']['email']; ?></span></i>
                                 </div>
-                                <div id="map"></div>
                             </div>
                         </div>
                     </div>
@@ -298,27 +297,37 @@
                                 <!-- CONTACT FORM -->
                                 <div class="contact-form wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
                                     <div id="message"></div>
-                                    <form action="scripts/contact.php" class="form-horizontal contact-1" role="form" name="contactform" id="contactform">
+                                    <form action="contact_us/submit_inquiry" class="form-horizontal contact-1" role="form" name="contactform" id="form-inquiry">
                                         <div class="form-group">
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                            <input type="hidden" name="<?=$csrf['name'];?>" id="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>"/>
+                                                <input type="text" class="form-control" name="name-inquiry" id="name-inquiry" required="true" placeholder="Name">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                                <input type="email" class="form-control" name="email-inquiry" id="email-inquiry" required="true" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="subject-inquiry" id="subject-inquiry" required="true" placeholder="Subject">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" name="phone-inquiry" id="phone-inquiry" required="true" placeholder="Phone">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-12">
-                                                <input type="subject" class="form-control" id="subject" placeholder="Subject *">
                                                 <div class="text_area">
-                                                    <textarea name="contact-message" id="msg" class="form-control" cols="30" rows="8" placeholder="Message"></textarea>
+                                                    <textarea name="message-inquiry" id="message-inquiry" class="form-control" cols="30" rows="8" required="true" placeholder="Message"></textarea>
                                                 </div>
-                                                <button type="submit" class="btn custom-btn" data-loading-text="Loading...">Send</button>
+                                                <button type="submit" id="btn-submit-inquiry" required="true" data-loading-text="Loading..." class="btn btn-primary">Submit</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
+                            <div id="alert-inquiry-success" style="display:none;" class="alert alert-success alert-inquiry" role="alert"></div>
+                            <div id="alert-inquiry-failed" style="display:none;" class="alert alert-danger alert-inquiry" role="alert"></div>
                         </div>
                     </div>
                     <!--End of col-md-6-->

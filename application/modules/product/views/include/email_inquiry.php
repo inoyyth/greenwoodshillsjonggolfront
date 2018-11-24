@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>GreenWoods Hills Jonggol - Inquiry Email</title>
+    <title>GreenWood Hill Jonggol - Inquiry Email</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -282,7 +282,7 @@
           <div class="content">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <span class="preheader">GreenWoods Hills Jonggol</span>
+            <span class="preheader">GreenWood Hills Jonggol</span>
             <table role="presentation" class="main">
 
               <!-- START MAIN CONTENT AREA -->
@@ -291,17 +291,8 @@
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        <p style='text-transform: capitalize;'>Hi <b> Admin GreenWoods Hills Jonggol</b>,</p>
-                        <p>Saat ini Anda mendapatkan email dari user yang mengunjungi website <?php echo base_url();?></p>
-                        <br>
-                        <p>Berikut ini informasinya: </p>
-                        <p>Nama: <?php echo $name;?></p>
-                        <p>Email: <?php echo $email;?></p>
-                        <p>Phone: <?php echo $phone;?></p>
-                        <p>Subjek: <?php echo $subject;?></p>
-                        <p>Pesan: <?php echo $message;?></p>
-                        <br>
-                        <br>
+                        <p style='text-transform: capitalize;'>Hi <b><?php echo $name; ?></b>,</p>
+                        <p>Terima kasih, kami akan segera melakukan balasan baik melalui email Anda di (<?php echo $email;?>) ataupun menghubungi via telepon atau pun sms ke nomor Anda di <?php echo $phone;?> untuk informasi atas product kami <?php echo $product;?></p>
                         <!-- <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
@@ -339,7 +330,7 @@
                 </tr> -->
                 <tr>
                   <td class="content-block powered-by">
-                    Powered by <a href="<?php echo base_url();?>">GreenWoods Hills Jonggol</a>.
+                    Powered by <a href="<?php echo base_url();?>">GreenWood Hills Jonggol</a>.
                   </td>
                 </tr>
               </table>

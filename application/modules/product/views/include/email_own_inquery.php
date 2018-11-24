@@ -292,13 +292,15 @@
                     <tr>
                       <td>
                         <p style='text-transform: capitalize;'>Hi <b> Admin GreenWoods Hills Jonggol</b>,</p>
-                        <p>Saat ini Anda mendapatkan email dari user yang mengunjungi website <?php echo base_url();?></p>
+                        <p>Saat ini Anda mendapatkan email dari user yang mengunjungi website <?php echo base_url();?>,  dan bertanya 
+                         mengenai detail produk.</p>
                         <br>
                         <p>Berikut ini informasinya: </p>
+                        <p>Nama Produk: <?php echo $product;?></p>
                         <p>Nama: <?php echo $name;?></p>
                         <p>Email: <?php echo $email;?></p>
                         <p>Phone: <?php echo $phone;?></p>
-                        <p>Subjek: <?php echo $subject;?></p>
+                        <p>Alamat: <?php echo $address;?></p>
                         <p>Pesan: <?php echo $message;?></p>
                         <br>
                         <br>

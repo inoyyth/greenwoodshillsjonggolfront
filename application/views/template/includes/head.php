@@ -43,7 +43,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand custom_navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/themes/img/logo.png" alt=""></a>
+                        <a class="navbar-brand custom_navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/themes/img/logo-new.png" alt=""></a>
                     </div>
                     <!--End of navbar-header-->
 

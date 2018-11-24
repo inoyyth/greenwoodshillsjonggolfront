@@ -25,7 +25,7 @@ class Contact_us extends MX_Controller {
 
 	public function index()
 	{
-		$data['contact'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/pages?slug=contact-us'),true);
+		$data['contact'] = json_decode($this->curl->simple_get($this->config->item('rest_api_default') . '/pages?slug=top-header'),true);
 		$data['csrf'] = array(
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash()
@@ -38,44 +38,42 @@ class Contact_us extends MX_Controller {
 	}
 
 	public function submit_inquiry() {
-		if (!$this->input->is_ajax_request()) {
-            exit('No direct script access allowed');
-		}
-
 		$csrf = array(
 			'csrfName' => $this->security->get_csrf_token_name(),
 			'csrfHash' => $this->security->get_csrf_hash()
 		);
-
-		$data = array(
-			'email' => $this->input->post('email'),
-			'name' => $this->input->post('name'),
-			'message' => $this->input->post('message'),
-			'phone' => $this->input->post('phone')
-		);
-
-		$post = $this->curl->simple_post($this->config->item('rest_api_inoy') . '/inquiry', $data);
-
-		if ( $post ) {
-			$response = array(
-				'status'=>200, 
-				'message' => 'Your inquiry is success submited'
-			);
-			$this->__sendMail($data);
-		} else {
+		
+		if (!$this->input->is_ajax_request()) {
 			$response = array(
 				'status'=>400, 
 				'message' => 'Oops sorry something wrong please try again later'
 			);
+			echo json_encode(array_merge($response, $csrf));
 		}
+
+		$data = array(
+			'email' => $this->input->post('email-inquiry'),
+			'name' => $this->input->post('name-inquiry'),
+			'message' => $this->input->post('message-inquiry'),
+			'subject' => $this->input->post('subject-inquiry'),
+			'phone' => $this->input->post('phone-inquiry')
+		);
+
+		// $post = $this->curl->simple_post($this->config->item('rest_api_inoy') . '/inquiry', $data);
+
+		$this->__sendMail($data);
+		$response = array(
+			'status'=>200, 
+			'message' => 'Your inquiry is success submited'
+		);
 		echo json_encode(array_merge($response, $csrf));
 	}
 
 	private function __sendMail($data) {
         $msg = $this->load->view('contact_us/include/email_inquiry',$data,true);
-        $this->email->from('info@bayobinsar.com', 'Bayo Binsar Official Website');
+        $this->email->from('info@greenwoodsjonggol.com', 'GreenWood Hills Jonggol');
         $this->email->to($data['email']); 
-        $this->email->subject('Terima Kasih Telah Kirim Pesan Ke Bayo Binsar');
+        $this->email->subject('Terima Kasih Telah Kirim Pesan Ke GreenWood Hills Jonggol');
         $this->email->message($msg);  
 		if ($this->email->send()) {
 			$this->__sendMailOwn($data);
@@ -87,8 +85,8 @@ class Contact_us extends MX_Controller {
 	
 	private function __sendMailOwn($data) {
         $msg = $this->load->view('contact_us/include/email_own_inquery',$data,true);
-        $this->email->from('info@bayobinsar.com', 'Bayo Binsar Official Website');
-        $this->email->to('info@bayobinsar.com'); 
+        $this->email->from('info@greenwoodsjonggol.com', 'GreenWood Hills Jonggol');
+        $this->email->to('info@greenwoodsjonggol.com'); 
         $this->email->subject('Inquery From ' . $data['name']);
         $this->email->message($msg);  
 		if ($this->email->send()) {

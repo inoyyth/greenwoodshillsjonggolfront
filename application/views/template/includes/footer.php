@@ -40,60 +40,6 @@
     });
 </script>
 
-<!--Gmaps-->
-<script src="<?php echo base_url('assets/themes/js/gmaps.min.js')?>"></script>
-<script type="text/javascript">
-    var map;
-    $(document).ready(function () {
-        map = new GMaps({
-            el: '#map',
-            lat: 23.6911078,
-            lng: 90.5112799,
-            zoomControl: true,
-            zoomControlOpt: {
-                style: 'SMALL',
-                position: 'LEFT_BOTTOM'
-            },
-            panControl: false,
-            streetViewControl: false,
-            mapTypeControl: false,
-            overviewMapControl: false,
-            scrollwheel: false,
-        });
-
-
-        map.addMarker({
-            lat: 23.6911078,
-            lng: 90.5112799,
-            title: 'Office',
-            details: {
-                database_id: 42,
-                author: 'Foysal'
-            },
-            click: function (e) {
-                if (console.log)
-                    console.log(e);
-                alert('You clicked in this marker');
-            },
-            mouseover: function (e) {
-                if (console.log)
-                    console.log(e);
-            }
-        });
-    });
-</script>
-<!--Google Maps API-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjxvF9oTfcziZWw--3phPVx1ztAsyhXL4"></script>
-
-
-<!--Isotope-->
-<script src="<?php echo base_url('assets/themes/js/isotope/min/scripts-min.js')?>"></script>
-<script src="<?php echo base_url('assets/themes/js/isotope/cells-by-row.js')?>"></script>
-<script src="<?php echo base_url('assets/themes/js/isotope/isotope.pkgd.min.js')?>"></script>
-<script src="<?php echo base_url('assets/themes/js/isotope/packery-mode.pkgd.min.js')?>"></script>
-<script src="<?php echo base_url('assets/themes/js/isotope/scripts.js')?>"></script>
-
-
 <!--Back To Top-->
 <script src="<?php echo base_url('assets/themes/js/backtotop.js')?>"></script>
 
@@ -113,5 +59,6 @@
 <script src="<?php echo base_url('assets/themes/js/bootstrap.min.js')?>"></script>
 <!-- Custom JavaScript-->
 <script src="<?php echo base_url('assets/themes/js/main.js')?>"></script>
+<?php echo $this->load->view('template/includes/custom_footer_js');?>
     </body>
 </html>

@@ -16,12 +16,43 @@ $(document).ready(function (){
                     $("#alert-inquiry-failed").text(data.message).show();
                 }
                 btn.button('reset');
-                $("#name-inquiry,#email-inquiry,#phone-inquiry,#message-inquiry").val('');
+                $("#name-inquiry,#email-inquiry,#subject-inquiry,#phone-inquiry,#message-inquiry").val('');
             },
             error: function(error) {
+                $("#"+data.csrfName).val(data.csrfHash);
                 $("#alert-inquiry-failed").text('Oops sory something wrong, please try again').show();
                 btn.button('reset');
-                $("#name-inquiry,#email-inquiry,#phone-inquiry,#message-inquiry").val('');
+                $("#name-inquiry,#email-inquiry,#phone-inquiry,#subject-inquiry,#message-inquiry").val('');
+            }
+        });
+        setTimeout(function(){$(".alert-inquiry").hide(); }, 5000);
+        e.preventDefault();
+    });
+
+    $("#form-product").submit(function(e){
+        var url = $(this).attr('action');
+        var data = $('form').serialize();
+        var btn = $("#btn-submit-inquiry-product").button('loading');
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: function(data){
+                $("#"+data.csrfName).val(data.csrfHash);
+                if (data.status === 200) {
+                    $("#alert-inquiry-success").text(data.message).show();
+                } else {
+                    $("#alert-inquiry-failed").text(data.message).show();
+                }
+                btn.button('reset');
+                $("#name-inquiry,#email-inquiry,#phone-inquiry,#address-inquiry,#message-inquiry").val('');
+            },
+            error: function(error) {
+                $("#"+data.csrfName).val(data.csrfHash);
+                $("#alert-inquiry-failed").text('Oops sory something wrong, please try again').show();
+                btn.button('reset');
+                $("#name-inquiry,#email-inquiry,#phone-inquiry,#address-inquiry,#message-inquiry").val('');
             }
         });
         setTimeout(function(){$(".alert-inquiry").hide(); }, 5000);
