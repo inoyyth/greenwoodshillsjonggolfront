@@ -897,7 +897,7 @@ input#email {
 
 .text_area textarea {
     resize: none;
-    width: 555px;
+    /* width: 555px; */
 }
 .text_area textarea,
 .form-inline .form-control,
